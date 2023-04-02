@@ -9,6 +9,8 @@ import WrongPath from './components/WrongPath';
 import History from './components/History';
 import Company from './components/Company';
 import Team from './components/Team';
+import Members from './components/Members';
+import MemberDetail from './components/MemberDetail';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path="team" element={<Team />} />
         </Route>
         <Route path="*" element={<WrongPath />} />
+        <Route path="/members" element={<Members />} />
+        <Route path="/members/:memberId" element={<MemberDetail />} />
       </Routes>
     </div>
   );
