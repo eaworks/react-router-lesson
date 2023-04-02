@@ -11,6 +11,8 @@ import Company from './components/Company';
 import Team from './components/Team';
 import Members from './components/Members';
 import MemberDetail from './components/MemberDetail';
+import React from 'react';
+const LazyAboutUs = React.lazy(() => import('./components/AboutUs'))
 
 function App() {
   return (
@@ -18,7 +20,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/aboutUs" element={<AboutUs />} />
+        <Route path="/aboutUs" element={<React.Suspense><LazyAboutUs /></React.Suspense>} />
         <Route path="/mission" element={<Misssion />} />
         <Route path="/history" element={<History />} >
           <Route path="company" element={<Company />} />
